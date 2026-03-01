@@ -30,7 +30,8 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Check imports with isort
       run: |
-        isort . --check --diff --line-length 88 --lines-after-imports 2
+        # isort . --check --diff --line-length 88 --lines-after-imports 2
+        isort . --check --diff --line-length 88
     - name: Check formatting with black
       run: |
         black . --check --diff --skip-magic-trailing-comma --skip-string-normalization
