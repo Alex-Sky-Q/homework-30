@@ -1,0 +1,7 @@
+SQLAlchemy
+pytest-asyncio
+httpx
+uvicorn
+fastapi
+pydantic
+pytest
