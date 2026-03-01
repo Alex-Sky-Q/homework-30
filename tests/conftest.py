@@ -59,4 +59,3 @@ async def client(override_get_session):
     ) as ac:
         yield ac
     app.dependency_overrides.clear()
-
