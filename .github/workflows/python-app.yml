@@ -44,7 +44,7 @@ jobs:
     - name: Type check with mypy
       run: |
         # mypy . --ignore-missing-imports
-        mypy .
+        mypy . --explicit-package-bases
     - name: Test with pytest
       run: |
         pytest
