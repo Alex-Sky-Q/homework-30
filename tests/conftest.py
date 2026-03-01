@@ -1,9 +1,9 @@
 from typing import AsyncGenerator
 
 import pytest_asyncio
-from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
+from httpx import ASGITransport, AsyncClient
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.pool import StaticPool
-from httpx import AsyncClient, ASGITransport
 
 from ..db import Base
 from ..main import app, get_session
