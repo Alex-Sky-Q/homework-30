@@ -61,4 +61,3 @@ class Ingredient(Base):
 
     def __repr__(self):
         return f"<Ingredient(id={self.id}, name='{self.name}')>"
-
