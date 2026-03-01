@@ -10,8 +10,12 @@ async def test_get_recipes_empty(client: AsyncClient):
 
 async def test_create_recipe(client: AsyncClient):
     """POST /recipes — создание рецепта"""
-    recipe_data = {"name": "Борщ", "cook_time": 110, "description": "Классический борщ",
-                   "ingredients": ["свёкла", "капуста", "картофель"]}
+    recipe_data = {
+        "name": "Борщ",
+        "cook_time": 110,
+        "description": "Классический борщ",
+        "ingredients": ["свёкла", "капуста", "картофель"],
+    }
     response = await client.post("/recipes", json=recipe_data)
     assert response.status_code == 201
     data = response.json()
@@ -24,7 +28,11 @@ async def test_create_recipe(client: AsyncClient):
 
 async def test_get_recipe_by_id(client: AsyncClient):
     """GET /recipes/{id} — получение рецепта"""
-    recipe_data = {"name": "Паста", "cook_time": 15, "description": "Быстрая паста", "ingredients": ["макароны"]}
+    recipe_data = {"name": "Паста",
+                   "cook_time": 15,
+                   "description": "Быстрая паста",
+                   "ingredients": ["макароны"],
+                   }
     create_resp = await client.post("/recipes", json=recipe_data)
     recipe_id = create_resp.json()["id"]
     response = await client.get(f"/recipes/{recipe_id}")
