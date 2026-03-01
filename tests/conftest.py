@@ -55,7 +55,8 @@ async def client(override_get_session):
     """Верни TestClient с переопределённой БД"""
     app.dependency_overrides[get_session] = override_get_session
     async with AsyncClient(
-            transport=ASGITransport(app=app), base_url="http://test"
+        transport=ASGITransport(app=app), base_url="http://test"
     ) as ac:
         yield ac
     app.dependency_overrides.clear()
+
