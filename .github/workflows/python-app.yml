@@ -33,7 +33,7 @@ jobs:
         isort . --check --diff --line-length 88 --lines-after-imports 2
     - name: Check formatting with black
       run: |
-        black . --check --diff
+        black . --check --diff --skip-magic-trailing-comma --skip-string-normalization
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
